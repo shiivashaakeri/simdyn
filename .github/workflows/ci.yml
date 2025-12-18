@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
         if: matrix.python-version == '3.12'
         run: |
           pip install pytest-cov
-          pytest tests/ --cov=simdyn --cov-report=xml --cov-report=term-missing
+          pytest tests/ --cov=dynasim --cov-report=xml --cov-report=term-missing
 
       - name: Upload coverage to Codecov
         if: matrix.python-version == '3.12'
@@ -83,7 +83,7 @@ jobs:
 
       - name: Run mypy
         run: |
-          mypy src/simdyn --ignore-missing-imports --no-error-summary || true
+          mypy src/dynasim --ignore-missing-imports --no-error-summary || true
 
   docs:
     runs-on: ubuntu-latest

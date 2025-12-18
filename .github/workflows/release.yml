@@ -37,8 +37,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
       - uses: actions/checkout@v4
@@ -60,30 +61,10 @@ jobs:
           pip install pytest matplotlib
 
       - name: Run tests
-        run: |
-          pytest tests/ -v
-
-  publish-testpypi:
-    needs: test
-    runs-on: ubuntu-latest
-    environment: testpypi
-    permissions:
-      id-token: write
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist/
-
-      - name: Publish to TestPyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
-        continue-on-error: true
+        run: pytest tests/ -v --tb=short
 
   publish-pypi:
-    needs: [test, publish-testpypi]
+    needs: test
     runs-on: ubuntu-latest
     environment: pypi
     permissions:

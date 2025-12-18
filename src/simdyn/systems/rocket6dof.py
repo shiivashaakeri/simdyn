@@ -61,15 +61,15 @@ from typing import List, Optional, Tuple
 
 import numpy as np
 
-from dynasim.base import DynamicalSystem
-from dynasim.utils.quaternion import (
+from simdyn.base import DynamicalSystem
+from simdyn.utils.quaternion import (
     omega_matrix,
     quat_conjugate,
     quat_normalize,
     quat_rotate,
     quat_to_dcm,
 )
-from dynasim.utils.rotations import skew
+from simdyn.utils.rotations import skew
 
 # =============================================================================
 # Constants

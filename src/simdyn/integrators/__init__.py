@@ -14,11 +14,11 @@ rk4 : 4th-order Runge-Kutta
 
 Usage
 -----
->>> from dynasim.integrators import rk4_step, euler_step
+>>> from simdyn.integrators import rk4_step, euler_step
 >>> x_next = rk4_step(dynamics_fn, x, u, dt)
 
 Or use the integrator registry:
->>> from dynasim.integrators import get_integrator
+>>> from simdyn.integrators import get_integrator
 >>> step_fn = get_integrator('rk4')
 >>> x_next = step_fn(dynamics_fn, x, u, dt)
 """

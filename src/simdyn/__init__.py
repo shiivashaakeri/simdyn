@@ -1,14 +1,17 @@
 """
-DynaSim - A Modular Dynamics Library for Control Systems Research.
+simdyn - A Modular Dynamics Library for Control Systems Research.
 
 This library provides standardized implementations of dynamical systems
 commonly used in robotics and aerospace control research.
+
+Visualization utilities are available in the `simdyn.visualization` submodule:
+    from simdyn.visualization import plot_states, animate_pendulum
 """
 
 __version__ = "0.1.0"
 
-from dynasim.base import DynamicalSystem
-from dynasim.integrators import (
+from simdyn.base import DynamicalSystem
+from simdyn.integrators import (
     euler_integrate,
     euler_step,
     get_integrator,
@@ -16,7 +19,7 @@ from dynasim.integrators import (
     rk4_integrate,
     rk4_step,
 )
-from dynasim.systems import (
+from simdyn.systems import (
     # Cart-Pole
     CartPole,
     CartPoleParams,
@@ -51,7 +54,7 @@ from dynasim.systems import (
     create_unicycle,
     forward_only_unicycle,
 )
-from dynasim.utils import (
+from simdyn.utils import (
     angle_difference,
     angular_velocity_to_euler_rates,
     dcm_angle,

@@ -14,8 +14,8 @@ These tests verify:
 import numpy as np
 import pytest
 
-from dynasim import DynamicalSystem
-from dynasim.systems.unicycle import (
+from simdyn import DynamicalSystem
+from simdyn.systems.unicycle import (
     Unicycle,
     UnicycleParams,
     create_unicycle,

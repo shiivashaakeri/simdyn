@@ -14,14 +14,14 @@ Pendulum : Simple pendulum (classic nonlinear benchmark)
 CartPole : Cart-pole / inverted pendulum (underactuated benchmark)
 """
 
-from dynasim.systems.cartpole import (
+from simdyn.systems.cartpole import (
     CartPole,
     CartPoleParams,
     create_cartpole,
     create_gym_cartpole,
     create_normalized_cartpole,
 )
-from dynasim.systems.double_integrator import (
+from simdyn.systems.double_integrator import (
     DoubleIntegrator,
     DoubleIntegrator1D,
     DoubleIntegrator2D,
@@ -31,32 +31,32 @@ from dynasim.systems.double_integrator import (
     default_params_2d,
     default_params_3d,
 )
-from dynasim.systems.pendulum import (
+from simdyn.systems.pendulum import (
     Pendulum,
     PendulumParams,
     create_damped_pendulum,
     create_normalized_pendulum,
     create_pendulum,
 )
-from dynasim.systems.rocket3dof import (
+from simdyn.systems.rocket3dof import (
     Rocket3DoF,
     Rocket3DoFParams,
     create_normalized_rocket3dof,
     create_rocket3dof,
 )
-from dynasim.systems.rocket3dof import (
+from simdyn.systems.rocket3dof import (
     normalized_params as rocket3dof_normalized_params,
 )
-from dynasim.systems.rocket6dof import (
+from simdyn.systems.rocket6dof import (
     Rocket6DoF,
     Rocket6DoFParams,
     create_rocket6dof,
     create_szmuk_rocket6dof,
 )
-from dynasim.systems.rocket6dof import (
+from simdyn.systems.rocket6dof import (
     szmuk_params as rocket6dof_szmuk_params,
 )
-from dynasim.systems.unicycle import (
+from simdyn.systems.unicycle import (
     Unicycle,
     UnicycleParams,
     create_unicycle,

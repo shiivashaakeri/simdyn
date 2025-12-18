@@ -1,5 +1,5 @@
 """
-Pytest configuration and shared fixtures for DynaSim tests.
+Pytest configuration and shared fixtures for simdyn tests.
 """
 
 import numpy as np

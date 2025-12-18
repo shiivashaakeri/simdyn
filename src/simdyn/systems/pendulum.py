@@ -50,8 +50,8 @@ from typing import List, Optional, Tuple
 
 import numpy as np
 
-from dynasim.base import DynamicalSystem
-from dynasim.utils.rotations import wrap_angle
+from simdyn.base import DynamicalSystem
+from simdyn.utils.rotations import wrap_angle
 
 # =============================================================================
 # Constants

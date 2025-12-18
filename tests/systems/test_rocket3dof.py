@@ -14,8 +14,8 @@ These tests verify:
 import numpy as np
 import pytest
 
-from dynasim import DynamicalSystem
-from dynasim.systems.rocket3dof import (
+from simdyn import DynamicalSystem
+from simdyn.systems.rocket3dof import (
     Rocket3DoF,
     Rocket3DoFParams,
     create_normalized_rocket3dof,

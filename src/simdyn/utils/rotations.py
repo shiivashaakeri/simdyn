@@ -31,7 +31,7 @@ from typing import Tuple
 
 import numpy as np
 
-from dynasim.utils.quaternion import (
+from simdyn.utils.quaternion import (
     dcm_to_quat,
     quat_normalize,
     quat_to_dcm,

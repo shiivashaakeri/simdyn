@@ -1,7 +1,7 @@
 """
 Abstract base class for dynamical systems.
 
-All dynamical systems in DynaSim inherit from this class and must implement
+All dynamical systems in simdyn inherit from this class and must implement
 the required abstract methods and properties.
 """
 
@@ -10,7 +10,7 @@ from typing import Callable, Dict, List, Optional, Tuple
 
 import numpy as np
 
-from dynasim.integrators import get_integrator
+from simdyn.integrators import get_integrator
 
 
 class DynamicalSystem(ABC):

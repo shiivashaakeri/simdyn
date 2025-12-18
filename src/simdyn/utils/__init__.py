@@ -1,5 +1,5 @@
 """
-Utility functions for DynaSim.
+Utility functions for simdyn.
 
 Modules
 -------
@@ -7,7 +7,7 @@ quaternion : Quaternion operations (scalar-first convention)
 rotations : Rotation utilities (DCM, Euler angles, conversions)
 """
 
-from dynasim.utils.quaternion import (
+from simdyn.utils.quaternion import (
     dcm_to_quat,
     # Kinematics
     omega_matrix,
@@ -34,7 +34,7 @@ from dynasim.utils.quaternion import (
     # Conversions
     quat_to_dcm,
 )
-from dynasim.utils.rotations import (
+from simdyn.utils.rotations import (
     angle_difference,
     # Angular velocity
     angular_velocity_to_euler_rates,

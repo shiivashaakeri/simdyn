@@ -11,7 +11,7 @@ These tests verify:
 import numpy as np
 import pytest
 
-from dynasim.integrators import (
+from simdyn.integrators import (
     INTEGRATOR_REGISTRY,
     euler_integrate,
     euler_step,

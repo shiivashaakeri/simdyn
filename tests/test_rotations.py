@@ -12,7 +12,7 @@ These tests verify:
 import numpy as np
 import pytest
 
-from dynasim.utils.quaternion import (
+from simdyn.utils.quaternion import (
     dcm_to_quat,
     omega_matrix,
     quat_angle,
@@ -33,7 +33,7 @@ from dynasim.utils.quaternion import (
     quat_slerp,
     quat_to_dcm,
 )
-from dynasim.utils.rotations import (
+from simdyn.utils.rotations import (
     angle_difference,
     angular_velocity_to_euler_rates,
     dcm_angle,

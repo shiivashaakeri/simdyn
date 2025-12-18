@@ -14,8 +14,8 @@ These tests verify:
 import numpy as np
 import pytest
 
-from dynasim import DynamicalSystem
-from dynasim.systems.double_integrator import (
+from simdyn import DynamicalSystem
+from simdyn.systems.double_integrator import (
     DoubleIntegrator,
     DoubleIntegrator1D,
     DoubleIntegrator2D,

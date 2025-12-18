@@ -53,7 +53,7 @@ from typing import List, Optional, Tuple
 
 import numpy as np
 
-from dynasim.base import DynamicalSystem
+from simdyn.base import DynamicalSystem
 
 # =============================================================================
 # Constants

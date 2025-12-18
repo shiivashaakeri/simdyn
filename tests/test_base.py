@@ -14,7 +14,7 @@ from typing import List
 import numpy as np
 import pytest
 
-from dynasim import DynamicalSystem
+from simdyn import DynamicalSystem
 
 # =============================================================================
 # Test Fixtures - Concrete System Implementations

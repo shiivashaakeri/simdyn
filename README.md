@@ -1,12 +1,12 @@
-# 🚀 DynaSim
+# 🚀 SimDyn
 
 **A Modular Dynamics Library for Control Systems Research**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-484%20passed-brightgreen.svg)]()
+[![Tests](https://img.shields.io/badge/tests-692%20passed-brightgreen.svg)]()
 
-DynaSim is a unified Python library providing standardized implementations of dynamical systems commonly used in robotics and aerospace control research. The library emphasizes:
+SimDyn is a unified Python library providing standardized implementations of dynamical systems commonly used in robotics and aerospace control research. The library emphasizes:
 
 - **Consistency**: All systems share a common interface
 - **Completeness**: Each system provides dynamics, Jacobians, and constraints
@@ -16,9 +16,19 @@ DynaSim is a unified Python library providing standardized implementations of dy
 ## Installation
 
 ```bash
+# Install from PyPI
+pip install simdyn
+
+# Or install with visualization support
+pip install simdyn[viz]
+```
+
+### From Source
+
+```bash
 # Clone the repository
-git clone https://github.com/username/dynasim.git
-cd dynasim
+git clone https://github.com/shiivashaakeri/simdyn.git
+cd simdyn
 
 # Install in development mode
 pip install -e .
@@ -36,13 +46,12 @@ pip install -e ".[dev]"
 ### Optional Dependencies
 
 - matplotlib (visualization)
-- pytest (testing)
 
 ## Quick Start
 
 ```python
 import numpy as np
-import dynasim as ds
+import simdyn as ds
 
 # Create a simple pendulum
 pendulum = ds.create_normalized_pendulum()
@@ -73,7 +82,7 @@ print(f"Energy drift: {abs(E_final - E_initial):.6f}")
 | **Rocket3DoF** | 7 | 3 | Nonlinear | Point-mass powered descent |
 | **Rocket6DoF** | 14 | 3 | Nonlinear | Rigid-body rocket with attitude |
 
-## 🔧 Core Features
+## Core Features
 
 ### Unified Interface
 
@@ -103,7 +112,7 @@ t, x, u = system.simulate(x0, controller, t_span, dt)
 
 ### Disturbance Handling
 
-All dynamics accept an optional disturbance input, critical for data-driven control:
+All dynamics accept an optional disturbance input:
 
 ```python
 # Process noise
@@ -149,7 +158,7 @@ rocket_model = ds.Rocket3DoF(params_model)
 
 ```python
 import numpy as np
-import dynasim as ds
+import simdyn as ds
 
 # Create 3-DoF rocket with normalized parameters
 rocket = ds.create_normalized_rocket3dof()
@@ -188,7 +197,7 @@ print(f"Fuel used: {1 - rocket.fuel_fraction(x[-1]):.1%}")
 
 ```python
 import numpy as np
-import dynasim as ds
+import simdyn as ds
 
 cartpole = ds.create_cartpole()
 
@@ -219,7 +228,7 @@ t, x, u = cartpole.simulate(x0, swing_up_controller, (0, 10), dt=0.02)
 ```python
 import numpy as np
 from scipy import linalg
-import dynasim as ds
+import simdyn as ds
 
 # Create pendulum
 pendulum = ds.create_normalized_pendulum()
@@ -271,14 +280,14 @@ t, x, u = pendulum.simulate(x0, lqr_controller, (0, 5), dt=0.01)
 
 See [docs/conventions.md](docs/conventions.md) for full details.
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
 pytest
 
 # Run with coverage
-pytest --cov=dynasim
+pytest --cov=simdyn
 
 # Run specific test file
 pytest tests/systems/test_rocket6dof.py -v
@@ -287,8 +296,8 @@ pytest tests/systems/test_rocket6dof.py -v
 ## Project Structure
 
 ```
-dynasim/
-├── src/dynasim/
+simdyn/
+├── src/simdyn/
 │   ├── __init__.py          # Package exports
 │   ├── base.py              # Abstract base class
 │   ├── systems/             # System implementations
@@ -319,7 +328,7 @@ Contributions are welcome! Please:
 4. Ensure all tests pass
 5. Submit a pull request
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
